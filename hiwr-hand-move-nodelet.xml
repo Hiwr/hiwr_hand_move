@@ -1,0 +1,7 @@
+<library path="lib/libhiwr_hand_move">
+  <class name="hiwr_hand_move/HiwrHandMove" type="hiwr_hand_move::HiwrHandMove" base_class_type="nodelet::Nodelet">
+    <description>
+      Implementing Hiwr Hand Move node as a nodelet
+    </description>
+  </class>
+</library>

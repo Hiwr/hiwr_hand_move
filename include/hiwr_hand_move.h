@@ -49,15 +49,16 @@
 
 #include <pluginlib/class_list_macros.h>
 
-namespace hiwr_brightness_sensor{
+namespace hiwr_hand_move{
 
-  class HiwrBrightnessSensor : public nodelet::Nodelet{
+  class HiwrHandMove : public nodelet::Nodelet{
   public:
     virtual void onInit();
 
   protected:
     cv_bridge::CvImagePtr im_ptr_;
     cv::Mat frame_;
+     cv::Mat frame_memory_;
 
     // Node handler
     ros::NodeHandle private_nh_;
@@ -74,6 +75,7 @@ namespace hiwr_brightness_sensor{
 
     // Img transport
     image_transport::Subscriber image_sub_;
+    image_transport::Publisher image_pub_;
     image_transport::ImageTransport * it_;
 
     // Thread
@@ -89,5 +91,5 @@ namespace hiwr_brightness_sensor{
 
   };
 
-  PLUGINLIB_DECLARE_CLASS(hiwr_brightness_sensor, HiwrBrightnessSensor, hiwr_brightness_sensor::HiwrBrightnessSensor, nodelet::Nodelet);
+  PLUGINLIB_DECLARE_CLASS(hiwr_hand_move, HiwrHandMove, hiwr_hand_move::HiwrHandMove, nodelet::Nodelet);
 }
